@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  db:
+    container_name: mysql_5_7
+    image: mysql:5.7.34
+    ports:
+      - 33060:3306
+    volumes:
+      - ./mysql/:/var/lib/mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+    environment:
+      MYSQL_ROOT_PASSWORD : rootroot
+      MYSQL_DATABASE : boardboard
+      MYSQL_USER : rootroot
+      MYSQL_PASSWORD : rootroot
